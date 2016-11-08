@@ -1,6 +1,6 @@
 #### Initial Set Up
 The idea here is to spin up a cluster from scratch. The hosts are now represented by docker containers.
-Please see the initial set up design [here](images/inital_Setup_Docker_CentOS.png)
+Please see the initial set up design [here](images/Initial_Setup_Docker_CentOS.png)
 
 * Since this is a virtual end to end design, we make use of dockers and it has its own advantages. We are not building any VMs that has everything pre-configured. We spin up containers instead, and build a system from scratch.
 
