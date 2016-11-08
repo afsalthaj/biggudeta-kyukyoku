@@ -1,10 +1,13 @@
---hosts:all
+- hosts: all
+  roles:
+   - openssh
+
   tasks:
-    -- name: "Install Open SSH Server"
-       yum: name="openssh-server" state=present
-    -- name: "Start Open SSH Server"
-       server: name="sshd" state=running
-    -- name: "Install rsyslog server"
-       yum: name="rsyslog" state=present
-    -- name: "Start rsyslog server"
-       server: name="rsyslog" state=running     
+    - name: Install RSyslog Server
+      yum: name="rsyslog" state=present
+
+    - name: Start rsyslog Server
+      service: name="rsyslog" state=running
+
+    - name: Open SSH Clients
+      yum: name="openssh-clients" state=present
