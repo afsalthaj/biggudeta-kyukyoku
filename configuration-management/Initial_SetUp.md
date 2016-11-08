@@ -6,7 +6,7 @@ Please see the initial set up design [here](images/Initial_Setup_Docker_CentOS.p
 
 * Once you spin up the containers, we configure the system using ansible. Going forward, let us visualise containers as actual host physical machines. The first step is to run CENTOS in each of these machines.
 
-* Although Ansible transports through SSH, we are going to use docker connectors, as the containers have nothing in it intially.
+* Although Ansible transports through SSH, we are going to use docker connectors, as the containers have no ssh-server running in it.
 
 
 ##### Why we went for docker containers?
