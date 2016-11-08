@@ -13,7 +13,7 @@ Please see the initial set up design [here](images/Initial_Setup_Docker_CentOS.p
 * Easy and flexible
 * Portable anywhere
 * Easy to switch to VMs, or cloud seamlessly
-* Works anywhere.
+* Easy to test
 
 ##### Prerequisites
 If you are trying out this project in your local machine, it is better you are using Linux/Mac machines. Or else, you may have to configure VMs. The machine should have:
