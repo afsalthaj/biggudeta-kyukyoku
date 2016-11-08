@@ -1,12 +1,12 @@
-## Sample Commands
+## Ansible Modules and Commands
+
+### Module shell
 
 Command to run uname -a commands through Shell Module in all hosts listed in inventory
 ```
 ansible all -i inventory -m shell -a "uname -a" -c docker
 
 ```
-
-### Module shell
 
 Other shell Module functionalities
 * uname -a : Gives the details of the kernel
