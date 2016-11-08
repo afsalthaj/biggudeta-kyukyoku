@@ -1,9 +1,9 @@
 #### Various Configuration Management Systems
-* CF ENGINE; It is in `C`
-* Puppet; Ruby; With a Ruby DSL for end user.
-* Chef; Ruby; with Ruby file for end user.
-* Salt Stack; Python; with YAML file for the end user
-* Ansible; Python; with YAML file for the end user.
+* **CF ENGINE**; It is in `C`
+* **Puppet**; Ruby; With a Ruby DSL for end user.
+* **Chef**; Ruby; with Ruby file for end user.
+* **Salt Stack**; Python; with YAML file for the end user
+* **Ansible**; Python; with YAML file for the end user.
 
 #### Architecture Comparison between various configuration management systems - a brain dump
 
