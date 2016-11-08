@@ -1,7 +1,7 @@
 #### Linux Python Installers
 * easy-install is a tool to install python packages
 * A tip: When you install softwares, install it to user directory instead of mutating the machine state.
-* Similar to easy-install, we have pip that installs pip to home directory.
+* Similar to easy-install, we have pip that installs python packages to home directory.
 
 #### Instructions to install pip
 **Step 1:**
