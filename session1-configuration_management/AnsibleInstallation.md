@@ -37,7 +37,8 @@ pip install ansible --user
 **Step 2:**
 
 Make sure python bins are added to your paths.
-Step 3: Verify the installation
+
+**Step 3:** Verify the installation
 ```
 ansible --version
 
