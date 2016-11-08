@@ -20,3 +20,36 @@ If you are trying out this project in your local machine, it is better you are u
 
 * [A running docker](https://docs.docker.com/engine/installation/)
 * [Ansible installed](AnsibleInstallation.md)
+
+
+##### Spin 3 containers
+
+To list the containers:
+
+```
+docker ps
+```
+
+To pull docker centos:6
+
+```
+docker pull centos:6
+```
+
+Images will now consist of centos:6
+
+```
+dokcer images
+```
+
+Spin 3 containers running CentOS, in sleeping state
+
+```
+docker run -d --name node01.afsalthaj.com --hostname node01.afsalthaj.com centos:6 /bin/sleep infinity
+
+docker run -d --name node02.afsalthaj.com --hostname node02.afsalthaj.com centos:6 /bin/sleep infinity
+
+docker run -d --name node03.afsalthaj.com --hostname node03.afsalthaj.com centos:6 /bin/sleep infinity
+```
+
+Assume here, that node 1, node 2 and node 3 are 3 different physical machines.
