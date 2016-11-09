@@ -1,0 +1,11 @@
+# Start Docker Containers:
+- include: create_containers.yml
+
+# Configure yum repositories
+- include: cloudera_repository.yml
+
+# Install Basic packages
+- include: site.yml
+
+# Install HDFS namenode
+- include: hdfs.yml

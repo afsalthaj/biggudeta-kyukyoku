@@ -50,6 +50,14 @@ docker run -d --name node01.afsalthaj.com --hostname node01.afsalthaj.com centos
 docker run -d --name node02.afsalthaj.com --hostname node02.afsalthaj.com centos:6 /bin/sleep infinity
 
 docker run -d --name node03.afsalthaj.com --hostname node03.afsalthaj.com centos:6 /bin/sleep infinity
+
+docker run -d --name node03.afsalthaj.com --hostname node04.afsalthaj.com centos:6 /bin/sleep infinity
+
+docker run -d --name node03.afsalthaj.com --hostname node05.afsalthaj.com centos:6 /bin/sleep infinity
+
 ```
 
 Assume here, that node 1, node 2 and node 3 are 3 different physical machines.
+
+
+Please refer to [ansible](ansible) [inventory](inventory) that list down the hosts.

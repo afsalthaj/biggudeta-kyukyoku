@@ -1,0 +1,4 @@
+- hosts: namenode
+  tasks:
+    - name: Install Hadoop HDFS namenode
+      yum: name=hadoop-hdfs-namenode state=present   

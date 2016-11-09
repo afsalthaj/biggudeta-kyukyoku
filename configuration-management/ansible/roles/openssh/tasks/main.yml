@@ -1,7 +1,7 @@
 ---
 # tasks file for openssh
 - name: install openssh server
-  yum: name=openssh-server state=installed
+  yum: name=openssh-server state=present
 
 - name: start openssh server
   service: name=sshd state=running

@@ -4,10 +4,10 @@
 
   tasks:
     - name: Install RSyslog Server
-      yum: name="rsyslog" state=present
+      yum: name=rsyslog state=present
 
     - name: Start rsyslog Server
-      service: name="rsyslog" state=running
+      service: name=rsyslog state=running
 
     - name: Open SSH Clients
-      yum: name="openssh-clients" state=present
+      yum: name=openssh-clients state=present

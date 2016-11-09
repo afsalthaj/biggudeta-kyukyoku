@@ -34,3 +34,6 @@ In inventory, you could define how many nodes has to be spawned, and assign whic
 https://github.com/afsalthaj/supaku-sukara
 
 This is my personal repo and exists for the personal purpose of learning scala, functional programming and Big Data spark, with the intend to share it with my friends later on.
+
+## Reference
+https://github.com/Ranjandas/hadoop-yarn
