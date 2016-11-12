@@ -6,8 +6,6 @@
         name: node0{{ item }}.afsalthaj.com
         hostname: node0{{ item }}.afsalthaj.com
         network_mode: bridge
-        networks:
-          - name: hadnet
         command: /bin/sleep infinity
         privileged: true
       with_sequence: count=5
