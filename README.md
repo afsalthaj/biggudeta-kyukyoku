@@ -7,13 +7,13 @@ The solution revolves around Linux Kernel. Hence it is a value add to get your h
 
 
 #### Which distribution to use?
-Depends on what you want to do with your computer. Every distribution is specific to the need. For instance, if you want a computer for web surf etc go for ubuntu, or if you want enterprise level support, then go for Redhat, if you want really fast small light weight Linux, go for DSL and so on.
+Depends on what you want to do with your computer. Every distribution is specific to the need. For instance, if you want enterprise level support, go for Redhat, if you want really fast small light weight Linux, go for DSL and so on.
 
 #### A key note on Open Source Licensing
-First of all, Open Source software is not a free software. Open source software vendors are getting paid here. So is Linux too. Linux distributions are just not free. Bear in mind, Linux is not a free bullshit software. Torvalids made it public for public brains to come together and contribute to it. Remember, git was just Torvalds' sub project. Linux is a well maintained, highly monitored robust software - and may not be free.
+First of all, Open Source software is not a free software. Open source software vendors are getting paid here. So is Linux too. Linux distributions are just not free. Remember, git was just Torvalds' sub project. Linux is a well maintained, highly monitored robust software - LST: it may not be free.
 
 ## Virtual Machines
-OS consist of Kernel, shell etc. Hope you know this. Now you want to have virtual machines running over the host, you need to have a Hypervisor (manages the kernel resources to each VM running). On top of Hypervisor, you have various virtual machines that can have separate OS, separate /usr/lib etc. Also, all of them has a pre-shared set of kernel resources managed through hypervisor. This has its overhead, but this can never be replaced. Various virtual boxes are available in industry for you to have this set up in your environment. It is also important you know about **vagrant**, which is a command line utility for managing the life cycle of virtual machines. It is able to provide a portable and reproducible development environment using virtual machines.
+Hope you have atleast heard about OS, Shell, Kernel and so forth. Starting from here, if you need to have virtual machines running over the host, you need to have a Hypervisor that manages the kernel resources to each VM instance. On top of Hypervisor, you have various virtual machines that can have separate OS, separate /usr/lib, specific configurations and capabilties. All of them habe a pre-shared set of kernel resources managed through hypervisor. This has its overhead, but this can never be replaced. Various virtual boxes are available in industry for you to have this set up in your environment. It is also important you know about **vagrant**, that it is a command line utility for managing the life cycle of virtual machines. It is able to provide a portable and reproducible development environment using virtual machines.
 
 ## Docker
 
