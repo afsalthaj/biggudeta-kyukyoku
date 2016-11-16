@@ -20,6 +20,11 @@ object IO {
   /** Load data, given an input path, spark session, schema and format
     * of the data
     */
+  def loadData[T <: Product](inputPath: Path, spark: SparkSession, format: Format = csvFormat) = {
+    import spark.implicits._
+    spark.read.format(csvFormat).load(inputPath).as[T]
+  }
+
   def loadData(inputPath: Path, spark: SparkSession, schema: StructType, format: Format = csvFormat) = {
     spark.read.format(csvFormat).schema(schema).load(inputPath)
   }

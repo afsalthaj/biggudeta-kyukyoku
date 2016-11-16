@@ -7,15 +7,16 @@ import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructT
   */
 object Schema {
   /** Object that covers the schema of any data-set */
-    val storeSchema = StructType(Array(
-      StructField("store_id",        IntegerType,false),
-      StructField("year",        StringType,false),
-      StructField("month",          StringType,false),
-      StructField("day",             StringType,false),
-      StructField("fuel",            StringType,true),
-      StructField("nonfuel",         StringType,true),
-      StructField("total_profit",    StringType,true)
-    ))
+
+  case class StoreData(
+     store_id:        Int,
+     year:            String,
+     month:           String,
+     day:             String,
+     fuel:            String,
+     nonfuel:         Double,
+     total_profit:    Double
+  )
 
     val sitesSchema = StructType(Array(
       StructField("store_id",        IntegerType,false),
