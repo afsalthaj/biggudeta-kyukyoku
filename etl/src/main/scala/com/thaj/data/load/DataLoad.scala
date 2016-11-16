@@ -21,6 +21,7 @@ object DataLoad{
 
     val joinedDataSet = storeData.toDF.join(sitesData, Seq("store_id"), "left")
 
+
     joinedDataSet.select(
       joinedDataSet("store_id"),
       joinedDataSet("total_profit"),

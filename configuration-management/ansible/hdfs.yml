@@ -31,7 +31,7 @@
     - name: Configure core-site.xml
       template:
         src: core-site.xml.j2
-        dest: /etc/hadoop/conf/code-site.xml
+        dest: /etc/hadoop/conf/core-site.xml
       when: core_site is defined
       notify:
         - Restart Hadoop HDFS Namenode
@@ -40,9 +40,9 @@
 
     - name: Configure hdfs-site.xml
       template:
-        src: core-site.xml.j2
-        dest: /etc/hadoop/conf/core-site.xml
-      when: core_site is defined
+        src: hdfs-site.xml.j2
+        dest: /etc/hadoop/conf/hdfs-site.xml
+      when: hdfs_site is defined
       notify:
         - Restart Hadoop HDFS Namenode
         - Restart Hadoop HDFS SecondaryNamenode
