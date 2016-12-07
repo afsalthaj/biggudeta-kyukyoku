@@ -3,6 +3,7 @@ node02.afsalthaj.com
 node03.afsalthaj.com
 node04.afsalthaj.com
 node05.afsalthaj.com
+proxy
 
 [masters]
 node01.afsalthaj.com
@@ -23,3 +24,14 @@ node02.afsalthaj.com
 node03.afsalthaj.com
 node04.afsalthaj.com
 node05.afsalthaj.com
+
+[resourcemanager]
+node01.afsalthaj.com
+
+[nodemanager]
+node03.afsalthaj.com
+node04.afsalthaj.com
+node05.afsalthaj.com
+
+[proxyserver]
+node02.afsalthaj.com

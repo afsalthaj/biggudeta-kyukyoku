@@ -17,21 +17,8 @@ object IO {
   // Most of the data are csv format
   val csvFormat = "com.databricks.spark.csv"
 
-  /** Load data, given an input path, spark session, schema and format
-    * of the data
-    */
-  def loadData[T <: Product](inputPath: Path, spark: SparkSession, format: Format = csvFormat) = {
-    import spark.implicits._
-    spark.read.format(csvFormat).load(inputPath).as[T]
-  }
-
-  def loadData(inputPath: Path, spark: SparkSession, schema: StructType, format: Format = csvFormat) = {
-    spark.read.format(csvFormat).schema(schema).load(inputPath)
-  }
-
   /** Write data, as parquet data set, to make sure that we have enough compression
     * and type safety
     */
-  def writeData(data: DataFrame, outputPath: Path) =
-  data.write.mode(SaveMode.Overwrite).parquet(outputPath)
+  def writeData(data: DataFrame, outputPath: Path) = data.write.mode(SaveMode.Overwrite).parquet(outputPath)
 }

@@ -9,3 +9,6 @@
 
 # Install HDFS namenode
 - include: hdfs.yml
+
+# Install and configure YARN
+- include: yarn.yml

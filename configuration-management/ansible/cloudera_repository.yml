@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: all,!proxy
   tasks:
     - name: "Configure CDH5 YUM repository"
       yum_repository:
@@ -37,7 +37,7 @@
         gpgcheck: yes
         file: "CentOS-Base"
 
-    - name: Install Oracle J2 SDK 
+    - name: Install Oracle J2 SDK
       yum:
         name: "oracle-j2sdk1.7"
         state: present

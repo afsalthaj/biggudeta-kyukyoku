@@ -1,8 +1,10 @@
 package com.thaj.data.load
 
-import org.apache.spark.sql.{Dataset, SparkSession}
+import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 import com.thaj.data.schema.Schema._
 import com.thaj.data.io.IO._
+import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.functions._
 
 object DataLoad{
 
@@ -11,23 +13,50 @@ object DataLoad{
       .config("spark.sql.parquet.binaryAsString", "true")
       .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse/").getOrCreate()
 
-    val storeData: Dataset[StoreData] = loadData[StoreData]("/Users/afsalthaj/SampleData/fake_profit/*", spark)
-    storeData.select("store_id", "year", "month", "day").show()
-    writeData(storeData.toDF, "/Users/afsalthaj/SampleData/profit/")
+    import spark.implicits._
 
-    val sitesData = loadData("/Users/afsalthaj/SampleData/sitesinfo/*", spark, sitesSchema )
-    sitesData.select("store_id", "state", "suburb", "brand").show()
-    writeData(sitesData, "/Users/afsalthaj/SampleData/sites/")
+    // A sample DataFrame
+    val storeData: DataFrame = spark.read.format(csvFormat).schema(storeSchema)
+      .load("/Users/afsalthaj/SampleData/fake_profit/*")
 
-    val joinedDataSet = storeData.toDF.join(sitesData, Seq("store_id"), "left")
+    writeData(storeData, "/Users/afsalthaj/SampleData/profit/")
 
+   // Another DataFrame
+   val sitesData: DataFrame =
+    spark.read.format(csvFormat).schema(sitesSchema)
+    .load("/Users/afsalthaj/SampleData/sitesinfo/*")
 
-    joinedDataSet.select(
-      joinedDataSet("store_id"),
-      joinedDataSet("total_profit"),
-      joinedDataSet("latitude"),
-      joinedDataSet("longitude")
-    ).show
+    // Started with a DataFrame and mapped it to SuburbState to get DataSet[SuburbState]
+    val subSetColumnsFromStoreData: Dataset[SuburbState] =
+      sitesData.map(t => SuburbState(t.getAs[String]("suburb"), t.getAs[String]("state")))
+
+    // Started with an RDD since schema is not passed in, and you mapped it to AreaData to get RDD[AreaData]
+    val areaDataSt: RDD[AreaData] =
+      spark.sparkContext.textFile("/Users/afsalthaj/SampleData/AreaData/area.psv")
+      .map(_.split("\\|"))
+      .map(t => {
+        AreaData(t(0), t(1), t(2), t(3).toDouble)
+      })
+
+    // An easy conversion to `DataFrame` directly from an RDD
+    val areaData =  areaDataSt.toDF()
+
+    // Being able to join a `DataFrame` to a `DataSet` to get a `DataFrame` in return
+    val suburbArea: DataFrame = areaData
+      .join(
+        subSetColumnsFromStoreData,
+        lower(areaData("label")).contains(lower(subSetColumnsFromStoreData("suburb"))),
+        "left"
+      )
+
+    suburbArea.show(10)
+
+    writeData(sitesData.toDF(), "/Users/afsalthaj/SampleData/sites/")
+
+    // Join two dataframe to get a DataFrame in return
+    val joinedDataSet: DataFrame = storeData.join(sitesData, Seq("store_id"), "left")
+
+    joinedDataSet.printSchema()
 
     spark.stop()
   }

@@ -15,3 +15,16 @@
         command: /bin/sleep infinity
         privileged: true
       with_sequence: count=5
+
+    - name: Create Proxy Container
+      docker_container:
+        image: docker.io/centos:6
+        name: proxy
+        hostname: proxy
+        network_mode: bridge
+        networks:
+          - name: mynet
+        volumes:
+          - "{{ ansible_user_dir }}/nginx-proxy:/opt/nginx-proxy:z"
+        command: /bin/sleep infinity
+        privileged: true
