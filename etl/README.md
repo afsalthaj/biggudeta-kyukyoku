@@ -1,6 +1,6 @@
 #### Sample Spark Job
 
-./spark-submit --class com.thaj.data.load.DataLoad  < path to packaged etl project >/target/scala_2.11/etl_2.11-0.1-SNAPSHOT.jar
+Example: $SPARK_HOME/spark-submit --class com.thaj.data.load.DataLoad  < path to packaged etl project >/target/scala_2.11/etl_2.11-0.1-SNAPSHOT.jar
 
 #### Read output
-Ex: java -jar < pathto >/parquet-tools-1.6.1-SNAPSHOT.jar cat part-r-00000-a9130032-fc52-4a6c-91b2-c3a39d2bc23a.snappy.parquet
+Example: java -jar < pathto >/parquet-tools-1.6.1-SNAPSHOT.jar cat part-r-00000-a9130032-fc52-4a6c-91b2-c3a39d2bc23a.snappy.parquet
