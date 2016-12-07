@@ -8,6 +8,7 @@ object build extends Build {
     id = "all"
     , base = file(".")
     , settings = Seq(
+        scalaVersion := "2.11.7",
         publishArtifact := false
       )
     , aggregate = Seq(etl)
@@ -17,7 +18,8 @@ object build extends Build {
     id = "etl"
     , base = file("etl")
     , settings = Seq[Sett](
-        libraryDependencies ++= Seq
+      scalaVersion := "2.11.7",
+      libraryDependencies ++= Seq
           (
             "org.apache.spark" %% "spark-core" % "2.0.1" % "provided",
             "org.apache.spark" %% "spark-sql" % "2.0.1",
