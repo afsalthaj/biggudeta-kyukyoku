@@ -12,3 +12,6 @@
 
 # Install and configure YARN
 - include: yarn.yml
+
+# Setting up the environment
+- include: environment.yml

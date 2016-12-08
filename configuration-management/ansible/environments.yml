@@ -1,0 +1,6 @@
+- hosts: node01.afsalthaj.com
+  tasks:
+    - name: "Set the development environment to node01.afsalthaj.com"
+      copy:
+        src: environment/dev.sh
+        dest: /etc/profile.d/ 
