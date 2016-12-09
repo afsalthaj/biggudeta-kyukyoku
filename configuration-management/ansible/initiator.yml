@@ -14,4 +14,4 @@
 - include: yarn.yml
 
 # Setting up the environment
-- include: environment.yml
+- include: environments.yml
