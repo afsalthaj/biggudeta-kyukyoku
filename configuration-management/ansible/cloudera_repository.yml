@@ -37,7 +37,9 @@
         gpgcheck: yes
         file: "CentOS-Base"
 
-    - name: Install Oracle J2 SDK
+    - name: Install Open JDK
       yum:
-        name: "oracle-j2sdk1.7"
+        name: "java-1.7.0-openjdk"
         state: present
+
+
