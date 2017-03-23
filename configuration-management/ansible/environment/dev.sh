@@ -1,4 +1,4 @@
-export JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera/
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 export HADOOP_CONF_DIR=/etc/hadoop/conf
 export SPARK_HOME=/root/spark/spark-2.0.1-bin-hadoop2.7
 
