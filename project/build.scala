@@ -11,12 +11,12 @@ object build extends Build {
         scalaVersion := "2.11.7",
         publishArtifact := false
       )
-    , aggregate = Seq(etl)
+    , aggregate = Seq(spark)
   )
 
-  lazy val etl = Project(
-    id = "etl"
-    , base = file("etl")
+  lazy val spark = Project(
+    id = "spark"
+    , base = file("spark")
     , settings = Seq[Sett](
       scalaVersion := "2.11.7",
       libraryDependencies ++= Seq
