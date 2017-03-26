@@ -3,4 +3,4 @@
     - name: "Set the development environment to node01.afsalthaj.com"
       copy:
         src: environment/dev.sh
-        dest: /etc/profile.d/ 
+        dest: /etc/profile.d/

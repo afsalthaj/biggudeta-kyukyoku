@@ -26,6 +26,8 @@ object build extends Build {
             "org.apache.spark" %% "spark-hive" % "2.0.1",
             "org.apache.spark" %% "spark-streaming" % "2.0.1",
             "org.apache.spark" %% "spark-streaming-flume" % "2.0.1",
+            "org.apache.spark" %% "spark-streaming-kafka" % "2.0.1",
+            "org.apache.spark" %% "spark-streaming-kinesis" % "2.0.1",
             "org.apache.spark" %% "spark-mllib" % "2.0.1",
             "org.apache.spark" %% "spark-catalyst" % "2.0.1",
             "org.apache.spark" %% "spark-unsafe" % "2.0.1"
